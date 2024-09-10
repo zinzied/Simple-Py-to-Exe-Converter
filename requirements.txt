@@ -1,0 +1,1 @@
+- `pyinstaller` (must be installed separately via pip)

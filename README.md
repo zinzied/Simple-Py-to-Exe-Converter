@@ -21,7 +21,7 @@ This script provides a graphical user interface (GUI) for converting Python scri
 
 2. **Run the Script**: Execute the script using Python:
    ```sh
-   python py_to_exe_converter.py
+   python py2exe.py
    ```
 
 3. **Select Python File**: Click the "Browse" button next to the "Python file" field to select the `.py` file you want to convert.

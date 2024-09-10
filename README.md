@@ -37,7 +37,7 @@ This script provides a graphical user interface (GUI) for converting Python scri
 
 8. **Convert**: Click the "Convert" button to start the conversion process. The progress bar will indicate that the process is ongoing.
 
-9. **Completion**: A message box will notify you whether the conversion was successful or if it failed.
+9. **Completion**: A message box will notify you whether the conversion was successful or if it failed and save the errors into log file.
 
 ## ScreenShot
 

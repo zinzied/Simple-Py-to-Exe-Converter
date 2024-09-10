@@ -40,7 +40,8 @@ This script provides a graphical user interface (GUI) for converting Python scri
 
 ## ScreenShot
 
-![image](https://github.com/user-attachments/assets/44c94738-b29b-46a4-af72-90e623523881)
+![image](https://github.com/user-attachments/assets/13c2751d-b6ec-4256-a604-5f58a5065f64)
+
 
 
 This script simplifies the process of converting Python scripts to executables, making it accessible even for users who are not familiar with command-line tools.

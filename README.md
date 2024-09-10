@@ -9,6 +9,7 @@ This script provides a graphical user interface (GUI) for converting Python scri
 - **Output Format**: Select between `onefile` (single executable) or `onedir` (directory with dependencies).
 - **Window Option**: Choose whether to show the console window or hide it (windowed mode).
 - **Icon File**: Optionally add an icon to the executable.
+- **Additional Files**: Optionally add Files or Forlder to the executable.
 - **Progress Bar**: Displays a progress bar while the conversion is in progress to indicate activity.
 - **Threading**: Uses threading to ensure the GUI remains responsive during the conversion process.
 

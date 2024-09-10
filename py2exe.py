@@ -14,9 +14,15 @@ def browse_output_dir():
     entry_output_dir.delete(0, tk.END)
     entry_output_dir.insert(0, output_dir)
 
+def browse_additional_files():
+    files = filedialog.askopenfilenames()
+    entry_additional_files.delete(0, tk.END)
+    entry_additional_files.insert(0, ";".join(files))
+
 def convert():
     file_path = entry_file_path.get()
     output_dir = entry_output_dir.get()
+    additional_files = entry_additional_files.get()
     if not file_path:
         messagebox.showerror("Error", "Please select a Python file to convert.")
         return
@@ -36,6 +42,9 @@ def convert():
         command.append("--noconsole")
     if icon_path:
         command.extend(["--icon", icon_path])
+    if additional_files:
+        for file in additional_files.split(";"):
+            command.extend(["--add-data", f"{file};."])
 
     progress_bar.start()
     try:
@@ -93,7 +102,7 @@ label_icon_path.grid(row=3, column=0, sticky="e")
 entry_icon_path = tk.Entry(frame, width=50)
 entry_icon_path.grid(row=3, column=1, padx=5)
 
-button_browse_icon = tk.Button(frame, text="Browse", command=lambda: entry_icon_path.insert(0, filedialog.askopenfilename(filetypes=[("Icon files", "*.ico")])))
+button_browse_icon = tk.Button(frame, text="Browse", command=lambda: entry_icon_path.insert(0, filedialog.askopenfilename(filetypes=[("Icon files", "*.ico")])) )
 button_browse_icon.grid(row=3, column=2)
 
 label_output_dir = tk.Label(frame, text="Output directory:")
@@ -104,6 +113,15 @@ entry_output_dir.grid(row=4, column=1, padx=5)
 
 button_browse_output = tk.Button(frame, text="Browse", command=browse_output_dir)
 button_browse_output.grid(row=4, column=2)
+
+label_additional_files = tk.Label(frame, text="Additional files (optional):")
+label_additional_files.grid(row=5, column=0, sticky="e")
+
+entry_additional_files = tk.Entry(frame, width=50)
+entry_additional_files.grid(row=5, column=1, padx=5)
+
+button_browse_additional = tk.Button(frame, text="Browse", command=browse_additional_files)
+button_browse_additional.grid(row=5, column=2)
 
 button_convert = tk.Button(app, text="Convert", command=start_conversion)
 button_convert.pack(pady=10)
